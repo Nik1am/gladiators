@@ -1,0 +1,50 @@
+<style>
+    body {
+        margin:0;
+        padding:0;
+    }
+    #settings {
+        border:2px solid;
+    }
+    #pts_desc {
+        width:100px;
+    }
+    #json #json_out {
+        border:2px solid;
+        width:400px;
+    }
+    #items {
+        border:2px solid;
+        width:400px;
+    }
+    #description {
+        position:absolute;
+        top:0px;
+        left: 400px;
+        border:2px solid;
+        width:400px;
+        height:30em;
+    }
+    #description_text {
+        border:2px solid;
+        width:400px;
+        height:30em;
+    }
+</style>
+<div id="settings">
+    <p>Использовано <span id="used">?</span> из 17</p>
+    <p><div id="pts_desc">Сила: </div><span id="st_pts">?</span> <input type="range" min="-2" max="3" id="strength"> </p> 
+    <p><div id="pts_desc">Ловкость: </div><span id="ag_pts">?</span> <input type="range" min="-2" max="3" id="agility"> </p> 
+    <p><div id="pts_desc">Интелект: </div><span id="in_pts">?</span> <input type="range" min="-2" max="3" id="intelligence"> </p> 
+    <p><div id="pts_desc">Харизма: </div><span id="ch_pts">?</span> <input type="range" min="-2" max="3" id="charisma"> </p> 
+    <p><div id="pts_desc">Скорость: </div><span id="sp_pts">?</span> <input type="range" min="-2" max="3" id="speed"> </p> 
+    <p><div id="pts_desc">Телосложение: </div><span id="bo_pts">?</span> <input type="range" min="-2" max="3" id="bodyshape"> </p>
+    <div id="description">Лор
+        <textarea id="description_text" disabled></textarea>
+    </div>
+    <p><div id="pts_desc">Предметы: </div><textarea id="items"></textarea></p>
+</div>
+<div id="json">
+    <textarea id="json_out" disabled></textarea>
+</div>
+<script src='./script.js'></script> 
