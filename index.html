@@ -7,44 +7,66 @@
         border:2px solid;
     }
     #pts_desc {
-        width:100px;
+        width:400px;
     }
     #json #json_out {
-        border:2px solid;
-        width:400px;
+        width:100%;
+        resize: none;
+    }
+    #discord #discord_out {
+        width:100%;
+        height:100%;
+        resize: none;
     }
     #items {
-        border:2px solid;
         width:400px;
+        resize: none;
+    }
+    #weapons {
+        width:400px;
+        resize: none;
     }
     #description {
         position:absolute;
         top:0px;
         left: 400px;
-        border:2px solid;
         width:400px;
-        height:30em;
+        height:40em;
     }
     #description_text {
-        border:2px solid;
+        resize: none;
         width:400px;
-        height:30em;
+        height:40em;
     }
 </style>
 <div id="settings">
-    <p>Использовано <span id="used">?</span> из 17</p>
-    <p><div id="pts_desc">Сила: </div><span id="st_pts">?</span> <input type="range" min="-2" max="3" id="strength"> </p> 
-    <p><div id="pts_desc">Ловкость: </div><span id="ag_pts">?</span> <input type="range" min="-2" max="3" id="agility"> </p> 
-    <p><div id="pts_desc">Интелект: </div><span id="in_pts">?</span> <input type="range" min="-2" max="3" id="intelligence"> </p> 
-    <p><div id="pts_desc">Харизма: </div><span id="ch_pts">?</span> <input type="range" min="-2" max="3" id="charisma"> </p> 
-    <p><div id="pts_desc">Скорость: </div><span id="sp_pts">?</span> <input type="range" min="-2" max="3" id="speed"> </p> 
-    <p><div id="pts_desc">Телосложение: </div><span id="bo_pts">?</span> <input type="range" min="-2" max="3" id="bodyshape"> </p>
-    <div id="description">Лор
-        <textarea id="description_text" disabled></textarea>
+    <p>Имя: <input id="name"></p>
+    <p>Использовано очков <span id="used">?</span> из 17</p>
+    <p><span id="pts_desc">Сила: </span><span id="st_pts">?</span> <input type="range" min="-2" max="3" id="strength"> </p> 
+    <p><span id="pts_desc">Ловкость: </span><span id="ag_pts">?</span> <input type="range" min="-2" max="3" id="agility"> </p> 
+    <p><span id="pts_desc">Интеллект: </span><span id="in_pts">?</span> <input type="range" min="-2" max="3" id="intelligence"> </p> 
+    <p><span id="pts_desc">Харизма: </span><span id="ch_pts">?</span> <input type="range" min="-2" max="3" id="charisma"> </p> 
+    <p><span id="pts_desc">Скорость: </span><span id="sp_pts">?</span> <input type="range" min="-2" max="3" id="speed"> </p> 
+    <p><span id="pts_desc">Телосложение: </span><span id="bo_pts">?</span> <input type="range" min="-2" max="3" id="bodyshape"> </p>
+    <p>Броня:
+    <select id="armor">
+        <option value="0">Без брони</option>
+        <option value="1">Сверхлегкая</option>
+        <option value="2">Легкая</option>
+        <option value="3">Средняя</option>
+        <option value="4">Тяжелая</option>
+    </select>
+    </p>
+    <div id="description">Описание
+        <textarea id="description_text"></textarea>
     </div>
-    <p><div id="pts_desc">Предметы: </div><textarea id="items"></textarea></p>
+    <p><div id="pts_desc">Предметы(Писать через запятую): </div><textarea id="items"></textarea></p>
+    <p><div id="pts_desc">Оружие(Писать через запятую): </div><textarea id="weapons"></textarea></p>
 </div>
-<div id="json">
+<div id="json">JSON
     <textarea id="json_out" disabled></textarea>
+</div>
+<div id="discord">Анкета для дискорда
+    <textarea id="discord_out" disabled></textarea>
 </div>
 <script src='./script.js'></script> 
