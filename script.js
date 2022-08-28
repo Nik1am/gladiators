@@ -47,7 +47,8 @@ settings.oninput = function() {
     used.innerHTML = sum+12
     if (used.innerHTML > 17) {
         settings.style.boxShadow = "0px 0px 4px 4px #FF0000";
-        json_out.value = "Invalid stats"
+        json_out.value = "Нечестное распределение очков"
+        discord_out.value = "Нечестное распределение очков"
     }
     else {
         settings.style.boxShadow = "0px 0px 4px 4px #36393f";
