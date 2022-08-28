@@ -2,6 +2,12 @@ settings = document.getElementById("settings")
 used = document.getElementById("used")
 json_out = document.getElementById('json_out');
 discord_out = document.getElementById('discord_out');
+discord_out.onclick = function () {
+    discord_out.select();
+    discord_out.setSelectionRange(0, 99999);
+    document.execCommand('copy');
+    alert("Анкета для Дискорда скопирована в буфер обмена")
+}
 settings.oninput = function() {
     strength = parseInt(document.getElementById("strength").value)
     agility = parseInt(document.getElementById("agility").value)
