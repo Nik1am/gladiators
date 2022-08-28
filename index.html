@@ -1,10 +1,25 @@
+<head>
+    <meta content="Редактор" property="og:title">
+    <meta content="Генератор персонажей для Гладиаторов" property="og:description">
+    <meta content="nik1am.github.io" property="og:site_name">
+    <meta name="theme-color" content="#ff6961">
+</head>
+
 <style>
     body {
         margin:0;
-        padding:0;
+        padding:10;
+        background-color: #36393f ;
+    }
+    textarea {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #FFF;
+        background-color: #2f3136;
+        border: 2px #1e1f22 solid;
     }
     #settings {
-        border:2px solid;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
     #pts_desc {
         width:400px;
@@ -26,42 +41,63 @@
         width:400px;
         resize: none;
     }
-    #description {
-        position:absolute;
-        top:0px;
-        left: 400px;
-        width:400px;
-        height:40em;
-    }
-    #description_text {
+    #abilities_text,#description_text,#lore_text {
         resize: none;
-        width:400px;
-        height:40em;
+        width: 80%;
+        height: 20%;
+    }
+    #stats {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    #points {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #FFF;
+        padding: 10;
+        width: 80%;
+        background-color: #2f3136;
+        border: 2px #1e1f22 solid;
     }
 </style>
+<body>
 <div id="settings">
-    <p>Имя: <input id="name"></p>
-    <p>Использовано очков <span id="used">?</span> из 17</p>
-    <p><span id="pts_desc">Сила: </span><span id="st_pts">?</span> <input type="range" min="-2" max="3" id="strength"> </p> 
-    <p><span id="pts_desc">Ловкость: </span><span id="ag_pts">?</span> <input type="range" min="-2" max="3" id="agility"> </p> 
-    <p><span id="pts_desc">Интеллект: </span><span id="in_pts">?</span> <input type="range" min="-2" max="3" id="intelligence"> </p> 
-    <p><span id="pts_desc">Харизма: </span><span id="ch_pts">?</span> <input type="range" min="-2" max="3" id="charisma"> </p> 
-    <p><span id="pts_desc">Скорость: </span><span id="sp_pts">?</span> <input type="range" min="-2" max="3" id="speed"> </p> 
-    <p><span id="pts_desc">Телосложение: </span><span id="bo_pts">?</span> <input type="range" min="-2" max="3" id="bodyshape"> </p>
-    <p>Броня:
-    <select id="armor">
-        <option value="0">Без брони</option>
-        <option value="1">Сверхлегкая</option>
-        <option value="2">Легкая</option>
-        <option value="3">Средняя</option>
-        <option value="4">Тяжелая</option>
-    </select>
-    </p>
-    <div id="description">Описание
-        <textarea id="description_text"></textarea>
+    <div id="stats">
+        <div id="points">
+        <p>Использовано очков <span id="used">?</span> из 17</p>
+        <p><span id="pts_desc">Сила: </span><span id="st_pts">?</span> <input type="range" min="-2" max="3" id="strength"> </p> 
+        <p><span id="pts_desc">Ловкость: </span><span id="ag_pts">?</span> <input type="range" min="-2" max="3" id="agility"> </p> 
+        <p><span id="pts_desc">Интеллект: </span><span id="in_pts">?</span> <input type="range" min="-2" max="3" id="intelligence"> </p> 
+        <p><span id="pts_desc">Харизма: </span><span id="ch_pts">?</span> <input type="range" min="-2" max="3" id="charisma"> </p> 
+        <p><span id="pts_desc">Скорость: </span><span id="sp_pts">?</span> <input type="range" min="-2" max="3" id="speed"> </p> 
+        <p><span id="pts_desc">Телосложение: </span><span id="bo_pts">?</span> <input type="range" min="-2" max="3" id="bodyshape"> </p>
+        <p>Броня:
+        <select id="armor">
+            <option value="0">Без брони</option>
+            <option value="1">Сверхлегкая</option>
+            <option value="2">Легкая</option>
+            <option value="3">Средняя</option>
+            <option value="4">Тяжелая</option>
+        </select></p>
+        </div>
+        <div>
+        <p><div id="pts_desc">Предметы(Писать через запятую): </div><textarea id="items"></textarea></p>
+        </div>
+        <div>
+        <p><div id="pts_desc">Оружие(Писать через запятую): </div><textarea id="weapons"></textarea></p>
+        </div>
     </div>
-    <p><div id="pts_desc">Предметы(Писать через запятую): </div><textarea id="items"></textarea></p>
-    <p><div id="pts_desc">Оружие(Писать через запятую): </div><textarea id="weapons"></textarea></p>
+    <div>
+        <p>Имя: <input id="name"></p>
+        <div id="description">Описание
+            <p><textarea id="description_text"></textarea></p>
+        </div>
+        <div id="lore">Предистроия
+            <p><textarea id="lore_text"></textarea></p>
+        </div>
+        <div id="abilities">Способности
+            <p><textarea id="abilities_text"></textarea></p>
+        </div>
+    </div>
 </div>
 <div id="json">JSON
     <textarea id="json_out" disabled></textarea>
@@ -70,3 +106,4 @@
     <textarea id="discord_out" disabled></textarea>
 </div>
 <script src='./script.js'></script> 
+</body>

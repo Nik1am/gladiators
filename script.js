@@ -16,6 +16,8 @@ settings.oninput = function() {
     armor = document.getElementById("armor").value
     armor_names = ["Без брони","Сверхлегкая","Легкая","Средняя","Тяжелая"]
     description = document.getElementById("description_text").value
+    lore = document.getElementById("lore_text").value
+    abilities = document.getElementById("abilities_text").value
 
     var stats = new Object();
     stats.name = name
@@ -29,9 +31,12 @@ settings.oninput = function() {
     stats.weapons = weapons.split(",").slice(0,6)
     stats.armor = armor
     stats.description = description
+    stats.description = lore
+    stats.description = abilities
+
     var jsonString= JSON.stringify(stats);
     json_out.value = jsonString
-    discord_out.value = `Имя: ${stats.name} \nСила: ${stats.strength}\nЛовкость: ${stats.agility}\nИнтеллект: ${stats.intelligence}\nХаризма: ${stats.charisma}\nСкорость: ${stats.speed}\nТелосложение: ${stats.constitution}\nПредметы: ${items}\nОружие: ${weapons}\nБроня: ${armor_names[armor]}\nОписание: ${description}`
+    discord_out.value = `Имя: ${stats.name} \n\nСила: ${stats.strength}\nЛовкость: ${stats.agility}\nИнтеллект: ${stats.intelligence}\nХаризма: ${stats.charisma}\nСкорость: ${stats.speed}\nТелосложение: ${stats.constitution}\n\nПредметы: ${items}\nОружие: ${weapons}\nБроня: ${armor_names[armor]}\n\nОписание: \n${description}\n\nЛор:\n${lore}\n\nСпособности:\n${abilities}`
     document.getElementById("st_pts").innerHTML = strength
     document.getElementById("ag_pts").innerHTML = agility
     document.getElementById("in_pts").innerHTML = intelligence
@@ -42,11 +47,11 @@ settings.oninput = function() {
     sum = strength+agility+intelligence+charisma+speed+bodyshape
     used.innerHTML = sum+12
     if (used.innerHTML > 17) {
-        settings.style.backgroundColor = "#FF8888";
+        settings.style.boxShadow = "0px 0px 4px 4px #FF0000";
         json_out.value = "Invalid stats"
     }
     else {
-        settings.style.backgroundColor = "#FFF";
+        settings.style.boxShadow = "0px 0px 4px 4px #36393f";
     }
 
 
