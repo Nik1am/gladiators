@@ -31,9 +31,8 @@ settings.oninput = function() {
     stats.weapons = weapons.split(",").slice(0,6)
     stats.armor = armor
     stats.description = description
-    stats.description = lore
-    stats.description = abilities
-
+    stats.lore = lore
+    stats.abilities = abilities
     var jsonString= JSON.stringify(stats);
     json_out.value = jsonString
     discord_out.value = `Имя: ${stats.name} \n\nСила: ${stats.strength}\nЛовкость: ${stats.agility}\nИнтеллект: ${stats.intelligence}\nХаризма: ${stats.charisma}\nСкорость: ${stats.speed}\nТелосложение: ${stats.constitution}\n\nПредметы: ${items}\nОружие: ${weapons}\nБроня: ${armor_names[armor]}\n\nОписание: \n${description}\n\nЛор:\n${lore}\n\nСпособности:\n${abilities}`
