@@ -2,10 +2,13 @@ settings = document.getElementById("settings")
 used = document.getElementById("used")
 json_out = document.getElementById('json_out');
 discord_out = document.getElementById('discord_out');
-discord_out.onclick = function () {
+discord_btn = document.getElementById('discord_btn');
+discord_btn.onclick = function () {
+    discord_out.disabled = false;
     discord_out.select();
     discord_out.setSelectionRange(0, 99999);
     document.execCommand('copy');
+    discord_out.disabled = true;
     alert("Анкета для Дискорда скопирована в буфер обмена")
 }
 settings.oninput = function() {
